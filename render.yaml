@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ai-resume-screener-api
+    env: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: PORT
+        value: 3001
+      - key: NODE_ENV
+        value: production
